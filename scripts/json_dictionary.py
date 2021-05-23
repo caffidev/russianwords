@@ -14,5 +14,5 @@ else:
     json_words = {}
     for count in range(len(word_list)):
         json_words[word_list[count].rstrip()] = '1'
-    print(json.dumps(json_words, indent = 4, ensure_ascii = False).decode('utf-8'))
+    print(json.dumps(json_words, indent = 4, ensure_ascii = False))
 #Just append u - for unicode, or .encode('cp1251') for windows-1251
