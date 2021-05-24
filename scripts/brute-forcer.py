@@ -31,26 +31,35 @@ headers = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
 alphabetChr = []
 attlen = 1
 wordlen = 0
+
 #Opens file for writing
 f = open("words.txt", "w")
 
 def get(mask, c_wave):
+    '''
+    Gets a word from site using a mask
+    '''
     payload['word_mask'] = mask + '+'
     print(('  '*(c_wave-1)) + 'Used mask: ', end = '')
     print(payload['word_mask'])
     return requests.post(url, payload, headers = headers)
 
 def wave(mask, c_wave, previous):
+    '''
+    Starts a so-called wave of a char (3 main waves, and additional)
+    '''
     global alphabetChr, attlen, f, wordlen
     print(('  '*(c_wave-1)) + 'Starting wave ' + str(c_wave))
     attempt = 0
     for i in alphabetChr:
         c_mask = mask + i
         attempt += 1
+        #There are no words starting with -
+        if c_wave == 1 and i == '-':
+            continue
+        #It could be faster without using this or not, it still needs to be tested
         if c_wave < 3:
             wave(c_mask, c_wave+1, previous + str(attempt) + ':')
-            continue
-        if c_wave == 1 and i == '-':
             continue
         print(('  '*(c_wave-1))+ '-'*20)
         print(('  '*(c_wave-1)) +'Attempt ' + previous + str(attempt) + ' of ' + str(attlen))
@@ -81,7 +90,7 @@ def main():
     global alphabetChr,f, attlen
     #Alphabet counter
     print("Starting extracting words from " + url)
-    alphabet = list(range(ord('а'), ord('в') + 1))
+    alphabet = list(range(ord('а'), ord('я') + 1))
     alphabetChr = [chr(n) for n in alphabet]
     alphabetChr += '-'
     print('Используемый алфавит: ')

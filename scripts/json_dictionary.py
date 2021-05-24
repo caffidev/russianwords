@@ -1,4 +1,4 @@
-#!/ust/bin/env
+#!/usr/bin/env python3
 #Thanks to Innovative Inventor for this piece of code
 #IMPORTANT MESSAGE:
 #Python3 loves to save .json files in ASCII, so you need to encode it manually.
@@ -7,7 +7,8 @@ import sys
 import json
 
 if len(sys.argv) < 2:
-    print('Usage: python3 json_dictionary.py filename(*.txt format)')
+    print('Usage: python3 json_dictionary.py filename(*.txt format) ')
+    print('You can redirect the output with using of >> operator')
 else:
     words = open(sys.argv[1])
     word_list = words.readlines()
