@@ -15,16 +15,17 @@
 
 2) words_dictionary.json - словарь, сделанный из words.txt
 
-3) words_names.txt - содержит всевозможные русские имена.
+3) words_names.txt - содержит всевозможные русские имена. (> 700);
+Содержит отдельные ответвления.
 
 4) words_names.json - words_names.txt -> .json
 
-5) words_surnames.txt - содержит всевозможные русские фамилии.
+5) words_surnames.txt - содержит всевозможные русские фамилии. (> 800000)
 
 6) words_surnames.json - words_surnames.txt -> .json
 Кстати, насчет этого файла есть странность - он весит меньше чем в кодировкe cp-1251.
 
-7) Слова в падежах (words_cases) были взяты отсюда, были улучшены и переведены в .json. https://github.com/danakt/russian-words
+7) Слова в падежах (words_cases) были взяты отсюда, были улучшены и переведены в .json. https://github.com/danakt/russian-words (> 1500000)
 
 ### Нету слова в словаре?
 
@@ -55,17 +56,17 @@ Then I just translated them into **.json**, with using of json_dictionary.py and
 
 ### Available files
 
-All files are divided at sub-directories with their encoding.
+All files are divided in sub-directories with their encoding.
 
-1) words.txt contains all words (without cases)
+1) words.txt contains all words (without cases) (>150000)
 
 2) words_dictionary.json is the same as words.txt, just translated into words.txt
 
-3) words_names - contains all names on Russian (copy-paste from 10 sites)
+3) words_names - contains all names on Russian (copy-paste from 10 sites) (>700)
 
-4) words_surnames  - contains all surnames on Russian
+4) words_surnames  - contains all surnames on Russian  (>800000)
 
-5) words_cases, as words_surnames were brought and improved from
+5) words_cases, as words_surnames were brought and improved from (> 1500000)
 https://github.com/danakt/russian-words.
 
 ### Found a word that missing in this dictionary?
